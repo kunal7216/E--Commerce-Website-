@@ -4,6 +4,7 @@ const registerModal = document.getElementById("registerModal");
 const profileModal = document.getElementById("profileModal");
 const cartModal = document.getElementById("cartModal");
 const paymentModal = document.getElementById("paymentModal");
+const orderTrackingModal = document.getElementById("orderTrackingModal");
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 const profileLink = document.getElementById("profileLink");
@@ -205,4 +206,16 @@ document.getElementById("paymentForm").addEventListener("submit", function(e) {
     paymentModal.style.display = "none";
     cart = []; // Clear cart after successful payment
     updateCart();
+});
+
+// Order Tracking Functionality
+document.getElementById("orderTrackingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const orderNumber = document.getElementById("orderNumber").value;
+    // Simulate an API call to get order status
+    const orderStatus = "Your order is being processed."; // Example status
+
+    document.getElementById("orderStatus").style.display = "block";
+    document.getElementById("statusMessage").innerText = orderStatus;
+    orderTrackingModal.style.display = "none";
 });
